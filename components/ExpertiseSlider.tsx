@@ -68,18 +68,18 @@ export default function ExpertiseSlider({ data = expertiseData }: { data?: Slide
   const prev = () => setCurrentIndex((prev) => (prev - 1 + itemsToDisplay.length) % itemsToDisplay.length);
 
   return (
-    <div className="relative w-full flex items-center justify-center py-12 md:py-24 overflow-hidden">
+    <div className="relative w-full flex items-center justify-center py-16 md:py-24 overflow-hidden">
       
       {/* Wrapper for the whole slider including arrows */}
-      <div className="relative w-full max-w-[1600px] mx-auto flex items-center justify-between px-4 md:px-12">
+      <div className="relative w-full max-w-[1600px] mx-auto flex items-center justify-center md:justify-between px-0 md:px-12">
         
         {/* Left Arrow */}
-        <button onClick={prev} className="z-40 w-12 h-12 md:w-16 md:h-16 rounded-full border border-[var(--color-foreground)]/30 flex items-center justify-center hover:bg-[var(--color-foreground)] hover:text-white transition-colors text-[var(--color-foreground)] bg-transparent shrink-0">
-          <ArrowLeft size={28} strokeWidth={1} />
+        <button onClick={prev} className="absolute left-2 md:relative md:left-auto z-40 w-12 h-12 md:w-16 md:h-16 rounded-full border border-[var(--color-foreground)]/30 flex items-center justify-center hover:bg-[var(--color-foreground)] hover:text-white transition-colors text-[var(--color-foreground)] bg-white/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none shrink-0 shadow-sm md:shadow-none">
+          <ArrowLeft size={24} strokeWidth={1} className="md:w-[28px] md:h-[28px]" />
         </button>
 
         {/* Cards Container with overflow-hidden to clip outer cards */}
-        <div className="relative flex-1 h-[400px] md:h-[450px] overflow-hidden mx-4 md:mx-12">
+        <div className="relative w-full md:flex-1 h-[480px] md:h-[450px] overflow-hidden mx-0 md:mx-12">
           <div className="absolute inset-0 flex items-center justify-center">
             {itemsToDisplay.map((item, index) => {
               let offset = index - currentIndex;
@@ -115,23 +115,23 @@ export default function ExpertiseSlider({ data = expertiseData }: { data?: Slide
                   initial={false}
                   animate={{ x, scale, zIndex, opacity }}
                   transition={{ duration: 0.6, ease: "easeOut" as const }}
-                  className="absolute w-[85%] md:w-[550px] lg:w-[720px] h-[350px] lg:h-[380px] bg-white shadow-2xl shadow-black/5 p-2 flex flex-col md:flex-row"
+                  className="absolute w-[88%] md:w-[550px] lg:w-[720px] h-[400px] lg:h-[380px] bg-white shadow-2xl shadow-black/5 p-4 md:p-2 flex flex-col md:flex-row"
                   style={{ transformOrigin: "center center" }}
                 >
                   {/* Content */}
-                  <div className="flex-1 py-4 px-4 md:py-8 lg:py-10 md:pl-8 lg:pl-10 md:pr-6 lg:pr-8 flex flex-col justify-center order-2 md:order-1">
-                    <div className="flex items-center gap-4 lg:gap-6 mb-5 lg:mb-8">
-                      <div className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-[var(--color-background)] flex items-center justify-center shrink-0">
-                        <span className="font-serif italic text-3xl md:text-4xl lg:text-5xl text-[var(--color-foreground)]">{item.id}</span>
+                  <div className="flex-1 py-2 px-2 md:py-8 lg:py-10 md:pl-8 lg:pl-10 md:pr-6 lg:pr-8 flex flex-col justify-center order-2 md:order-1">
+                    <div className="flex items-center gap-4 lg:gap-6 mb-4 lg:mb-8">
+                      <div className="w-14 h-14 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-full bg-[var(--color-background)] flex items-center justify-center shrink-0">
+                        <span className="font-serif italic text-2xl md:text-4xl lg:text-5xl text-[var(--color-foreground)]">{item.id}</span>
                       </div>
-                      <h3 className="text-xl md:text-2xl lg:text-3xl font-light text-[var(--color-foreground)] leading-[1.15] max-w-[180px]">{item.title}</h3>
+                      <h3 className="text-xl md:text-2xl lg:text-3xl font-light text-[var(--color-foreground)] leading-[1.15] max-w-[200px] pr-2">{item.title}</h3>
                     </div>
                     <p className="text-[var(--color-foreground)]/70 text-sm md:text-base lg:text-base leading-relaxed">
                       {item.text}
                     </p>
                   </div>
                   {/* Image */}
-                  <div className="w-full md:w-[240px] lg:w-[300px] h-[150px] md:h-full relative shrink-0 order-1 md:order-2 rounded-sm overflow-hidden">
+                  <div className="w-full md:w-[240px] lg:w-[300px] h-[160px] md:h-full relative shrink-0 order-1 md:order-2 rounded-sm overflow-hidden mb-2 md:mb-0">
                     <Image src={item.image} alt={item.title} fill className="object-cover" />
                   </div>
                 </motion.div>
@@ -141,8 +141,8 @@ export default function ExpertiseSlider({ data = expertiseData }: { data?: Slide
         </div>
 
         {/* Right Arrow */}
-        <button onClick={next} className="z-40 w-12 h-12 md:w-16 md:h-16 rounded-full border border-[var(--color-foreground)]/30 flex items-center justify-center hover:bg-[var(--color-foreground)] hover:text-white transition-colors text-[var(--color-foreground)] bg-transparent shrink-0">
-          <ArrowRight size={28} strokeWidth={1} />
+        <button onClick={next} className="absolute right-2 md:relative md:right-auto z-40 w-12 h-12 md:w-16 md:h-16 rounded-full border border-[var(--color-foreground)]/30 flex items-center justify-center hover:bg-[var(--color-foreground)] hover:text-white transition-colors text-[var(--color-foreground)] bg-white/80 md:bg-transparent backdrop-blur-md md:backdrop-blur-none shrink-0 shadow-sm md:shadow-none">
+          <ArrowRight size={24} strokeWidth={1} className="md:w-[28px] md:h-[28px]" />
         </button>
 
       </div>

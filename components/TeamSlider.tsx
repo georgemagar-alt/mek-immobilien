@@ -30,10 +30,10 @@ export default function TeamSlider() {
                 <path d="M0 10 Q 10 0, 20 10 T 40 5" stroke="var(--color-foreground)" strokeWidth="1.5" fill="none" />
               </svg>
 
-              <h2 className="text-4xl md:text-5xl lg:text-[4rem] text-[var(--color-foreground)] font-medium uppercase tracking-tight leading-[1] mb-1">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[4rem] text-[var(--color-foreground)] font-medium uppercase tracking-tight leading-[1] mb-1">
                 IHR PERSÖNLICHER<br/>EXPERTE
               </h2>
-              <span className="font-serif italic text-4xl md:text-5xl lg:text-6xl text-[var(--color-foreground)] tracking-tight block mb-10">
+              <span className="font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[var(--color-foreground)] tracking-tight block mb-10">
                 immer an Ihrer Seite
               </span>
 

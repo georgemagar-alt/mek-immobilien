@@ -39,7 +39,7 @@ export default function HomePage() {
               initial="hidden"
               animate="visible"
               variants={fadeUpVariant}
-              className="text-5xl md:text-7xl lg:text-[6rem] font-medium tracking-tight mb-2 leading-[0.95] uppercase"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-[6rem] font-medium tracking-tight mb-2 leading-[0.95] uppercase"
             >
               GANZHEITLICHES<br />IMMOBILIEN-<br />MANAGEMENT
             </motion.h1>
@@ -49,9 +49,9 @@ export default function HomePage() {
               animate="visible"
               variants={fadeUpVariant}
               transition={{ delay: 0.2 }}
-              className="font-serif italic text-3xl md:text-5xl lg:text-6xl text-gray-200 mt-4"
+              className="font-serif italic text-2xl sm:text-3xl md:text-5xl lg:text-6xl text-gray-200 mt-4"
             >
-              <span className="text-sm md:text-base font-sans not-italic uppercase tracking-widest mr-4 opacity-80 align-middle">MIT</span>
+              <span className="text-[10px] sm:text-xs md:text-base font-sans not-italic uppercase tracking-widest mr-2 md:mr-4 opacity-80 align-middle">MIT</span>
               exzellenter Betreuung
             </motion.p>
           </div>
@@ -65,21 +65,21 @@ export default function HomePage() {
             className="flex flex-col lg:flex-row justify-start items-start mt-16 md:mt-24 gap-8 w-full"
           >
             <div className="flex flex-col md:flex-row gap-8 md:gap-12 text-left">
-              <div className="flex items-center gap-4">
-                <span className="font-serif italic text-4xl md:text-5xl -mt-1">
-                  1.2<span className="text-2xl md:text-3xl align-super ml-0.5">+</span> Mio
+              <div className="flex items-center gap-3 md:gap-4">
+                <span className="font-serif italic text-3xl sm:text-4xl md:text-5xl -mt-1">
+                  1.2<span className="text-xl sm:text-2xl md:text-3xl align-super ml-0.5">+</span> Mio
                 </span>
-                <span className="text-xs uppercase tracking-widest opacity-80 leading-tight mt-1">erfolgreiche<br/>Vermittlungen</span>
+                <span className="text-[10px] sm:text-xs uppercase tracking-widest opacity-80 leading-tight mt-1">erfolgreiche<br/>Vermittlungen</span>
               </div>
               <div className="hidden md:block w-px h-12 bg-white/30"></div>
-              <div className="flex items-center gap-4">
-                <span className="font-serif italic text-4xl md:text-5xl -mt-1">12</span>
-                <span className="text-xs uppercase tracking-widest opacity-80 leading-tight mt-1">exklusive<br/>Partner</span>
+              <div className="flex items-center gap-3 md:gap-4">
+                <span className="font-serif italic text-3xl sm:text-4xl md:text-5xl -mt-1">12</span>
+                <span className="text-[10px] sm:text-xs uppercase tracking-widest opacity-80 leading-tight mt-1">exklusive<br/>Partner</span>
               </div>
               <div className="hidden md:block w-px h-12 bg-white/30"></div>
-              <div className="flex items-center gap-4">
-                <span className="font-serif italic text-4xl md:text-5xl -mt-1">360°</span>
-                <span className="text-xs uppercase tracking-widest opacity-80 leading-tight mt-1">Ganzheitliche<br/>Betreuung</span>
+              <div className="flex items-center gap-3 md:gap-4">
+                <span className="font-serif italic text-3xl sm:text-4xl md:text-5xl -mt-1">360°</span>
+                <span className="text-[10px] sm:text-xs uppercase tracking-widest opacity-80 leading-tight mt-1">Ganzheitliche<br/>Betreuung</span>
               </div>
             </div>
           </motion.div>
@@ -92,7 +92,7 @@ export default function HomePage() {
 
 
       {/* 3. Leistungs-Grid -> Expertise Slider */}
-      <section id="leistungen" className="py-24 md:py-32 bg-[var(--color-background)] overflow-hidden">
+      <section id="leistungen" className="py-16 md:py-32 bg-[var(--color-background)] overflow-hidden">
         <div className="container-custom">
           {/* Header */}
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
@@ -102,10 +102,10 @@ export default function HomePage() {
               viewport={{ once: true }}
               variants={fadeUpVariant}
             >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl text-[var(--color-foreground)] font-medium uppercase tracking-tight leading-none mb-1">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[var(--color-foreground)] font-medium uppercase tracking-tight leading-none mb-1">
                 VON DER ANFRAGE<br/>ZUM ERGEBNIS
               </h2>
-              <span className="font-serif italic text-4xl md:text-5xl lg:text-6xl text-[var(--color-foreground)] tracking-tight">
+              <span className="font-serif italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[var(--color-foreground)] tracking-tight">
                 alles unter Kontrolle
               </span>
             </motion.div>
@@ -129,7 +129,7 @@ export default function HomePage() {
 
 
       {/* 2. Über-Uns-Teaser */}
-      <section id="ueber-uns" className="py-24 md:py-32 bg-[var(--color-background)] border-t border-b border-[var(--color-foreground)]/10">
+      <section id="ueber-uns" className="py-16 md:py-32 bg-[var(--color-background)] border-t border-b border-[var(--color-foreground)]/10">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             
@@ -142,10 +142,10 @@ export default function HomePage() {
               className="lg:col-span-3 flex flex-col justify-between"
             >
               <div>
-                <h2 className="text-4xl lg:text-5xl xl:text-6xl text-[var(--color-foreground)] font-medium uppercase tracking-tight leading-none mb-1">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-[var(--color-foreground)] font-medium uppercase tracking-tight leading-none mb-1">
                   MEHR ALS EIN
                 </h2>
-                <span className="font-serif italic text-4xl lg:text-5xl xl:text-6xl text-[var(--color-foreground)] tracking-tight block">
+                <span className="font-serif italic text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-[var(--color-foreground)] tracking-tight block">
                   Partner
                 </span>
               </div>

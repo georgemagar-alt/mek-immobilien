@@ -8,6 +8,15 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [mobileMenuOpen]);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -82,19 +91,28 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-[var(--color-background)] text-[var(--color-foreground)] border-t border-[var(--color-foreground)]/10 shadow-xl xl:hidden flex flex-col p-8 gap-6">
-          <Link href="/immobilienservice" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium tracking-widest uppercase">Immobilienservice</Link>
-          <Link href="/finanzservice" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium tracking-widest uppercase">Finanzservice</Link>
-          <Link href="/hausverwaltung" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium tracking-widest uppercase">Hausverwaltung</Link>
-          <Link href="/handwerkerservice" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium tracking-widest uppercase">Handwerkerservice</Link>
-          <Link href="/vermarktung" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium tracking-widest uppercase">Vermarktungsservice</Link>
-          <div className="border-t border-black/5 my-2"></div>
-          <Link href="/ueber-uns" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium tracking-widest uppercase">Über uns</Link>
-          <a href="#kontakt" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium tracking-widest uppercase">Kontakt</a>
+      {/* Mobile Menu Fullscreen Overlay */}
+      <div 
+        className={`fixed inset-0 bg-[var(--color-background)] z-40 transition-transform duration-700 ease-in-out xl:hidden flex flex-col justify-center px-8 ${
+          mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        <div className="flex flex-col gap-6 text-center mt-12">
+          <Link href="/immobilienservice" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-serif italic tracking-tight text-[var(--color-foreground)] hover:opacity-70 transition-opacity">Immobilienservice</Link>
+          <Link href="/finanzservice" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-serif italic tracking-tight text-[var(--color-foreground)] hover:opacity-70 transition-opacity">Finanzservice</Link>
+          <Link href="/hausverwaltung" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-serif italic tracking-tight text-[var(--color-foreground)] hover:opacity-70 transition-opacity">Hausverwaltung</Link>
+          <Link href="/handwerkerservice" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-serif italic tracking-tight text-[var(--color-foreground)] hover:opacity-70 transition-opacity">Handwerk</Link>
+          <Link href="/vermarktung" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-serif italic tracking-tight text-[var(--color-foreground)] hover:opacity-70 transition-opacity">Vermarktung</Link>
+          
+          <div className="w-12 h-px bg-[var(--color-foreground)]/20 mx-auto my-4"></div>
+          
+          <Link href="/ueber-uns" onClick={() => setMobileMenuOpen(false)} className="text-sm font-medium tracking-widest uppercase text-[var(--color-foreground)] hover:opacity-70 transition-opacity">Über uns</Link>
+          
+          <a href="#kontakt" onClick={() => setMobileMenuOpen(false)} className="mt-8 mx-auto inline-block bg-[var(--color-foreground)] text-white text-[11px] font-bold uppercase tracking-widest px-8 py-4 hover:bg-black transition-colors">
+            Erstgespräch
+          </a>
         </div>
-      )}
+      </div>
     </header>
   );
 }
