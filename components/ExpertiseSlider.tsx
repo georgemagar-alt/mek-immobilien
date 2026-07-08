@@ -114,7 +114,7 @@ export default function ExpertiseSlider({ data = expertiseData }: { data?: Slide
                   key={item.id}
                   initial={false}
                   animate={{ x, scale, zIndex, opacity }}
-                  transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
+                  transition={{ duration: 0.6, ease: "easeOut" as const }}
                   className="absolute w-[85%] md:w-[550px] lg:w-[720px] h-[350px] lg:h-[380px] bg-white shadow-2xl shadow-black/5 p-2 flex flex-col md:flex-row"
                   style={{ transformOrigin: "center center" }}
                 >
