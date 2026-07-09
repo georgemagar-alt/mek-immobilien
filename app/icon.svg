@@ -1,0 +1,16 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="100" fill="#F8F3ED" />
+  <text 
+    x="50%" 
+    y="52%" 
+    font-family="Georgia, Times New Roman, serif" 
+    font-size="340" 
+    font-weight="bold"
+    font-style="italic" 
+    fill="#5D5839" 
+    text-anchor="middle" 
+    dominant-baseline="middle"
+  >
+    M
+  </text>
+</svg>
